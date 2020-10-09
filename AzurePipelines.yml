@@ -11,11 +11,10 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'ACR'
+        containerRegistry: 'registry'
         repository: 'wikimedia'
         command: 'buildAndPush'
         Dockerfile: '**/DockerFile'
-        tags: $(Build.BuildId)
     - task: PublishPipelineArtifact@0
       inputs:
         artifactName: 'manifests'
