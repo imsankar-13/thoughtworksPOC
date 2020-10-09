@@ -1,6 +1,6 @@
 variables:
   imageRepository: 'wikimedia'
-  containerRegistry: 'wikimediaacr01.azurecr.io'
+  containerRegistry: 'wikimediaacr.azurecr.io'
 
 stages:
 - stage: build
