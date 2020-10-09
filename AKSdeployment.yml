@@ -16,3 +16,10 @@ spec:
       containers:
         - name: mediawiki-container
           image: wikimedia
+          volumeMounts:
+          - mountPath: /var/www/html/images
+              name: mediawiki-volume
+          ports:
+            - containerPort: 80
+      volumes:
+        - name: mediawiki-volume
