@@ -15,7 +15,7 @@ stages:
         repository: 'wikimedia'
         command: 'buildAndPush'
         Dockerfile: '**/DockerFile'
-        tags: 'wikimedia:$(Build.BuildId)'
+        tags: $(Build.BuildId)
     - task: PublishPipelineArtifact@0
       inputs:
         artifactName: 'manifests'
