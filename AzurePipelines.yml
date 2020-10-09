@@ -47,4 +47,3 @@ stages:
               namespace: 'default'
               manifests: '$(System.ArtifactsDirectory)/manifests/AKSdeployment.yml'
               containers: '$(containerRegistry)/$(imageRepository):$(tag)'
-              imagePullSecrets: 'secret'
