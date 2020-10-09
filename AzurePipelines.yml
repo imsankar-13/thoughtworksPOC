@@ -29,6 +29,7 @@ stages:
     displayName: Deploy job
     pool:
       vmImage: 'ubuntu-latest'
+    environment: 'akspocaks01-dns-969fc39a.hcp.westus.azmk8s.io'
     strategy:
       runOnce:
         deploy:
