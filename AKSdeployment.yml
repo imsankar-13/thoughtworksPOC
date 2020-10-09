@@ -18,11 +18,11 @@ spec:
           image: wikimedia
         imagePullSecrets:
         - name: secret
-          volumeMounts:
-          - mountPath: /var/www/html/images
-            name: mediawiki-volume
-          ports:
-            - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/www/html/images
+          name: mediawiki-volume
+        ports:
+        - containerPort: 80
       volumes:
         - name: mediawiki-volume
           persistentVolumeClaim:
