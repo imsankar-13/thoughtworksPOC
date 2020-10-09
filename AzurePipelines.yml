@@ -1,0 +1,21 @@
+variables:
+  imageName: 'gosample'
+  registry: 'REGNAME.azurecr.io'
+
+stages:
+- stage: build
+  jobs:
+  - job: 'BuildAndPush'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: '$(imageName)'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+    - task: PublishPipelineArtifact@0
+      inputs:
+        artifactName: 'manifests'
+        targetPath: 'manifests' 
