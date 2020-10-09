@@ -23,3 +23,5 @@ spec:
             - containerPort: 80
       volumes:
         - name: mediawiki-volume
+          persistentVolumeClaim:
+            claimName: my-azurefile
