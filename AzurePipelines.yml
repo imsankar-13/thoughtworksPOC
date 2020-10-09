@@ -46,7 +46,7 @@ stages:
               kubernetesServiceConnection: 'AKSDEV-AKSPOCAKS01-default-1602222690815'
               namespace: 'default'
               secretType: 'dockerRegistry'
-              secretName: 'AKSsecret'
+              secretName: 'akssecret'
               dockerRegistryEndpoint: 'ACR'
 
           - task: KubernetesManifest@0
@@ -57,4 +57,4 @@ stages:
               namespace: 'default'
               manifests: '$(System.ArtifactsDirectory)/manifests/AKSdeployment.yml'
               containers: '$(containerRegistry)/$(imageRepository):$(tag)'
-              imagePullSecrets: 'AKSsecret'
+              imagePullSecrets: 'akssecret'
