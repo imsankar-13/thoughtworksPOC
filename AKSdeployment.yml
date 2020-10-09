@@ -17,7 +17,7 @@ spec:
         - name: mediawiki-container
           image: wikimedia
         imagePullSecrets:
-          - name: secret
+        - name: secret
           volumeMounts:
           - mountPath: /var/www/html/images
             name: mediawiki-volume
