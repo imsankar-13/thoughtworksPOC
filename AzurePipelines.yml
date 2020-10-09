@@ -44,7 +44,6 @@ stages:
               action: 'deploy'
               kubernetesServiceConnection: 'AKSDEV-AKSPOCAKS01-default-1602222690815'
               namespace: 'default'
-              strategy: 'canary'
-              percentage: '0'
               manifests: '$(System.ArtifactsDirectory)/manifests/AKSdeployment.yml'
               containers: '$(containerRegistry)/$(imageRepository):$(tag)'
+              rolloutStatusTimeout: '300'
