@@ -48,7 +48,7 @@ stages:
               dockerRegistryEndpoint: $(DRServiceConnection)
 
           - task: KubernetesManifest@0
-            displayName: Deploy to Kubernetes cluster
+            displayName: Deploy  to Kubernetes cluster
             inputs:
               action: 'deploy'
               kubernetesServiceConnection: 'AKSDEV-AKSPOCAKS01-default-1602222690815'
