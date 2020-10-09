@@ -12,9 +12,9 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'ACR'
-        repository: '$(imageName)'
+        repository: 'wikimediaACR01'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: '**/DockerFile'
     - task: PublishPipelineArtifact@0
       inputs:
         artifactName: 'manifests'
