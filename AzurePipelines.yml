@@ -45,5 +45,5 @@ stages:
               kubernetesServiceConnection: 'aks02'
               namespace: 'default'
               manifests: '$(System.ArtifactsDirectory)/manifests/AKSdeployment.yml'
-              containers: '$(containerRegistry)/$(imageRepository):$(tag)'
+              containers: '$(containerRegistry)/$(imageRepository):latest'
               rolloutStatusTimeout: '300'
