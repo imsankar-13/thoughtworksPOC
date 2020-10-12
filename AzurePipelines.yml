@@ -24,13 +24,11 @@ stages:
   displayName: Deploy stage
   dependsOn: Build
   jobs:
-    displayName: Deploy job
+  - deployment: Deploy
+  - job: 'BuildAndPush'
     pool:
       vmImage: 'ubuntu-latest'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
+      steps:
           - task: DownloadPipelineArtifact@2
             inputs:
               artifactName: 'manifests'
