@@ -24,8 +24,7 @@ stages:
   displayName: Deploy stage
   dependsOn: Build
   jobs:
-  - deployment: Deploy
-  - job: 'BuildAndPush'
+  - job: 'Deployment'
     pool:
       vmImage: 'ubuntu-latest'
       steps:
